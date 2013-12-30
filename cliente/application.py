@@ -30,6 +30,7 @@ def client(ip, port, message):
     try:
         sock.sendall(message)
         response = sock.recv(1024)
+        print "respuesta ", len(response)
         print "Received: {}".format(response)
 
         #time.sleep(20)
@@ -47,7 +48,7 @@ def generar_vehiculo(vehiculo):
     return vehiculo
 
 if __name__ == "__main__":
-    IP, PORT = "localhost", 9999
+    IP, PORT = "awseb-e-q-AWSEBLoa-U0TZFW27RVH5-1541299131.us-west-2.elb.amazonaws.com", 9997
     #data = " ".join(sys.argv[1:])
     cantidad_vehiculos = int(sys.argv[1])
     #mensaje = sys.argv[2]
